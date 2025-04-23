@@ -46,7 +46,7 @@ metadata:
 spec:
   selector:
     app: sre-test
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 80
       targetPort: 8080
