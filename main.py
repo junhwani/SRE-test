@@ -10,7 +10,10 @@ def get_old_keys():
     # 쿼리스트링에서 days 값을 받아오고, 없으면 기본값 90 사용
     old_access_keys = check_old_access_keys(request.args.get('days', '90'))
 
-    return Response(json.dumps(old_access_keys,ensure_ascii=False, indent=4, default=str), mimetype='application/json')
+    return Response(
+        json.dumps(old_access_keys,ensure_ascii=False, indent=4, default=str),
+        mimetype='application/json'
+    )
 
 
 if __name__ == '__main__':
