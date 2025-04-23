@@ -10,31 +10,31 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: get_accesskey
+  name: sre-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: get_accesskey
+      app: sre-test
   template:
     metadata:
       labels:
-        app: get_accesskey
+        app: sre-test
     spec:
       containers:
-      - name: get_accesskey
-        image: ggamdi/agent:v1
-      env:
-      - name: DAYS
-        value: 30
-      - name: AWS_ACCESS_KEY_ID
-        valueFrom:
-          secretKeyRef:
-            name: aws
-            key: AWS_ACCESS_KEY_ID
-      - name: AWS_SECRET_ACCESS_KEY
-        valueFrom:
-          secretKeyRef:
-            name: aws
-            key: AWS_SECRET_ACCESS_KEY
-
+      - name: sre-test
+        image: ggamdi/sre-test:v1
+        env:
+        - name: DAYS
+          value: "30"
+#      - name: AWS_ACCESS_KEY_ID
+#        valueFrom:
+#          secretKeyRef:
+#            name: aws
+#            key: AWS_ACCESS_KEY_ID
+#      - name: AWS_SECRET_ACCESS_KEY
+#        valueFrom:
+#          secretKeyRef:
+#            name: aws
+#            key: AWS_SECRET_ACCESS_KEY
+#
