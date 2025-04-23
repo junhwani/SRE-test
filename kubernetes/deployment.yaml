@@ -26,8 +26,6 @@ spec:
         image: ggamdi/sre-test:v1
         imagePullPolicy: Always
         env:
-        - name: DAYS
-          value: "1000"
         - name: AWS_ACCESS_KEY_ID
           valueFrom:
             secretKeyRef:
