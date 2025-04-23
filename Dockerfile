@@ -5,6 +5,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 COPY main.py /
+COPY get_iam_info.py /
 
 ENV DAYS ""
 
