@@ -5,6 +5,8 @@ import os
 # N일 (default = 90)
 days =  os.environ.get('DAYS', '90')
 
+print(boto3.__version__)
+
 
 def check_old_access_keys(days):
     iam = boto3.client('iam')
