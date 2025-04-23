@@ -24,6 +24,7 @@ spec:
       containers:
       - name: sre-test
         image: ggamdi/sre-test:v1
+        imagePullPolicy: Always
         env:
         - name: DAYS
           value: "1000"
