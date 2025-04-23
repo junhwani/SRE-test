@@ -26,15 +26,14 @@ spec:
         image: ggamdi/sre-test:v1
         env:
         - name: DAYS
-          value: "30"
-#      - name: AWS_ACCESS_KEY_ID
-#        valueFrom:
-#          secretKeyRef:
-#            name: aws
-#            key: AWS_ACCESS_KEY_ID
-#      - name: AWS_SECRET_ACCESS_KEY
-#        valueFrom:
-#          secretKeyRef:
-#            name: aws
-#            key: AWS_SECRET_ACCESS_KEY
-#
+          value: "1000"
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws
+              key: AWS_SECRET_ACCESS_KEY

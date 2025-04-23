@@ -1,6 +1,7 @@
 import boto3
 from datetime import datetime, timezone
 import os
+import time
 
 # N일 (default = 90)
 days =  os.environ.get('DAYS', '90')
@@ -49,6 +50,8 @@ def check_old_access_keys(days):
 old_access_keys = check_old_access_keys(days)
 
 # 결과 출력
-for key in old_access_keys:
-    print(
-        f"사용자: {key['UserName']}, 액세스 키: {key['AccessKeyId']}, 경과일: {key['Age']}일, 생성일: {key['CreateDate']}, 상태: {key['Status']}")
+while True:
+    for key in old_access_keys:
+        print(
+            f"사용자: {key['UserName']}, 액세스 키: {key['AccessKeyId']}, 경과일: {key['Age']}일, 생성일: {key['CreateDate']}, 상태: {key['Status']}")
+    time.sleep(10)
